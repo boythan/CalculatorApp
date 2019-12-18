@@ -10,6 +10,7 @@ const styles = {
         flex: 1,
         justifyContent: 'flex-end',
         alignItems: 'flex-end',
+        padding: 6
     },
     buttonContainer: {
         borderRadius: 4,
@@ -30,8 +31,8 @@ const styles = {
         flex: 1,
         justifyContent: 'space-between'
     },
-    numberText: {
-        // fontSize: 16,
+    resultText: {
+        fontSize: 40
     },
 
 };
