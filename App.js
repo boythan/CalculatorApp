@@ -8,12 +8,11 @@ import styles from './src/styles';
 
 let store = createStore(calculator)
 export default function App() {
-  return (
-    <View style={styles.screenContainer}>
-      <Provider store={store}>
-        <CalculatorScreen />
-      </Provider>
-    </View>
+  return (<View style={styles.screenContainer}>
+    <Provider store={store}>
+      <CalculatorScreen />
+    </Provider>
+  </View>
   );
 }
 
