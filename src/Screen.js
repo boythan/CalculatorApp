@@ -3,11 +3,12 @@ import { View, Text } from "react-native"
 import styles from './styles';
 import Button from './Button';
 import constants from './constants';
-export default function CalculatorScreen(props) {
-    const [result, setResult] = useState(0)
+import { typeInputButton } from './actions';
+import { connect } from 'react-redux';
 
+const CalculatorScreen = (props) => {
     const onClickButton = (button) => {
-        setResult(button.content)
+        props.typeInputButton(button)
     }
     const renderInputFrame = () => {
         return <View style={styles.inputContainer}>
@@ -34,8 +35,9 @@ export default function CalculatorScreen(props) {
         </View>
     }
     const renderResultFrame = () => {
+        const { resultToDisplay } = props
         return <View style={styles.resultContainer}>
-            <Text style={styles.resultText}>{result}</Text>
+            <Text style={styles.resultText}>{resultToDisplay}</Text>
         </View>
     }
     return <View style={styles.screenContainer}>
@@ -43,3 +45,7 @@ export default function CalculatorScreen(props) {
         {renderInputFrame()}
     </View>
 }
+
+export default connect(state => ({
+    resultToDisplay: state.resultToDisplay,
+}), { typeInputButton })(CalculatorScreen);
