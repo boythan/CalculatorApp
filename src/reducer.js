@@ -26,7 +26,7 @@ function calculator(state = initialState, button) {
             }
         case constants.BUTTON_TYPE.RESULTING:
             try {
-                const result = eval(operatorString)
+                const result = eval(operatorString) + ''
                 if (result === constants.INFINITY_NUMBER) {
                     return { lastButtonClick: null, resultToDisplay: result, operatorString: '' }
                 }
