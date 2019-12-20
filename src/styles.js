@@ -34,6 +34,9 @@ const styles = {
     resultText: {
         fontSize: 40
     },
+    buttonViewContainer: {
+        flexDirection: 'row'
+    }
 
 };
 export default styles

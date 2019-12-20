@@ -14,7 +14,7 @@ const CalculatorScreen = (props) => {
         return <View style={styles.inputContainer}>
             <View style={styles.numberInputContainer}>
                 {constants.NUMBER_GROUP_BUTTONS.map(buttonGroup => {
-                    return <View style={{ flexDirection: 'row' }}>
+                    return <View style={styles.buttonViewContainer}>
                         {buttonGroup.map(button => <Button
                             onPress={() => onClickButton(button)}
                             content={button.content}
@@ -24,7 +24,7 @@ const CalculatorScreen = (props) => {
             </View>
             <View style={styles.operationInputContainer}>
                 {constants.OPERATION_BUTTONS.map(button => {
-                    return <View style={{ flexDirection: 'row' }}>
+                    return <View style={styles.buttonViewContainer}>
                         <Button
                             onPress={() => onClickButton(button)}
                             content={button.content}
